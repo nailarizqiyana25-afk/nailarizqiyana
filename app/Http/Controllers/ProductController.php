@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Product;
-
-class ProducController extends Controller
+use Illuminate\Http\Request;
+use App\Models\Product;
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $product = Product::all();
-        return view('product.index', compact('product'));
+        $products = Product::all();
+        return view('product.index', compact('products'));
     }
 
     /**
@@ -20,7 +20,7 @@ class ProducController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
